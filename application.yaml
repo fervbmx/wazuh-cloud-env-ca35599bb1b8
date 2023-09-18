@@ -5,7 +5,14 @@ metadata:
   namespace: argocd
 spec:
   project: environments
-  source:
-    repoURL: https://github.com/fervbmx/wazuh-cloud-environments
+  sources:
+  - repoURL: 'https://github.com/fervbmx/wazuh-cloud-environments'
     chart: wazuh-cloud-environments
-    targetRevision: 0.0.1
+    targetRevision: 15.7.1
+    helm:
+      valueFiles:
+      - values.yaml
+      - $values/values.yaml
+  - repoURL: 'https://github.com/fervbmx/wazuh-cloud-env-ca35599bb1b8'
+    targetRevision: HEAD
+    ref: values
