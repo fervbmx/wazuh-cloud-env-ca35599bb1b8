@@ -1,0 +1,7 @@
+indexer:
+  resources:
+    limits:
+      cpu: 1G
+      memory: 1564Mi
+  environments:
+    cluster_name: 'wazuh-indexer'
