@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: environments
+spec:
+  generators:
+  - list:
+      elements:
+      - name: 'env-ca35599bb1b8'
+        region: 'us-east-1'
+        server: 'https://kubernetes.default.svc'
+        version: 'HEAD'
+      - name: 'env-ba2t3d3am2k2'
+        region: 'us-east-1'
+        server: 'https://kubernetes.default.svc'
+        version: 'HEAD'
+      - name: 'env-12Agna34mal2'
+        region: 'eu-central-1'
+        server: 'https://kubernetes.default.svc'
+        version: 'HEAD'
+  template:
+    metadata:
+      name: {{ name }}
+    spec:
+      project: environments
+      destination:
+        server: {{ server }}
+        namespace: {{ name }}
+      sources:
+      - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
+        targetRevision: HEAD
+        path: /regions/{{ region }}/{{ name }}
+        ref: values
+      - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
+        targetRevision: {{ version }}
+        path: '/'
+        helm:
+          valueFiles:
+          - values.yaml
+          - $values/values.yaml
+  syncPolicy:
+    preserveResourcesOnDeletion: true
