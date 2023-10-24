@@ -41,6 +41,6 @@ spec:
         helm:
           valueFiles:
           - values.yaml
-          - $values/values.yaml
+          - $values/regions/{{ region }}/{{ name }}/values.yaml
   syncPolicy:
     preserveResourcesOnDeletion: true
