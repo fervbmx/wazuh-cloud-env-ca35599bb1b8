@@ -37,7 +37,7 @@ spec:
         ref: values
       - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
         targetRevision: '{{ version }}'
-        path: '/'
+        path: './'
         helm:
           valueFiles:
           - values.yaml
