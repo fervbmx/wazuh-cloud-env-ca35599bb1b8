@@ -1,0 +1,3 @@
+indexer:
+  environments:
+    cluster_name: 'wazuh-indexer-env-ca35599bb1b8'
