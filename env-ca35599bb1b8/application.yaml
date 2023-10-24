@@ -9,10 +9,11 @@ spec:
     server: 'https://kubernetes.default.svc'
     namespace: env-ca35599bb1b8
   sources:
-  - repoURL: 'git@github.com:fervbmx/wazuh-cloud-env-ca35599bb1b8.git'
-    targetRevision: HEAD
-    ref: values
   - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
+    targetRevision: HEAD
+    path: '/env-ca35599bb1b8'
+    ref: values
+  - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
     targetRevision: HEAD
     path: './'
     helm:

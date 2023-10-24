@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: env-12Agna34mal2
+  namespace: argocd
+spec:
+  project: environments
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: env-12Agna34mal2
+  sources:
+  - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
+    targetRevision: HEAD
+    path: '/env-12Agna34mal2'
+    ref: values
+  - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
+    targetRevision: HEAD
+    path: './'
+    helm:
+      valueFiles:
+      - values.yaml
+      - $values/values.yaml
