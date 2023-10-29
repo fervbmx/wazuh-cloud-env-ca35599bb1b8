@@ -10,7 +10,7 @@ spec:
       - name: 'env-ca35599bb1b8'
         region: 'us-east-1'
         server: 'https://kubernetes.default.svc'
-        version: '4.3.11'
+        version: '4.5.0'
       - name: 'env-pa2c323am2k2'
         region: 'eu-central-1'
         server: 'https://kubernetes.default.svc'
@@ -27,10 +27,6 @@ spec:
         syncOptions:
           - CreateNamespace=true
       sources:
-      - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
-        targetRevision: HEAD
-        path: 'regions/{{ region }}/{{ name }}'
-        ref: values
       - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
         targetRevision: '{{ version }}'
         path: './'
@@ -38,5 +34,9 @@ spec:
           valueFiles:
           - values.yaml
           - $values/regions/{{ region }}/{{ name }}/values.yaml
+      - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
+        targetRevision: HEAD
+        path: 'regions/{{ region }}/{{ name }}'
+        ref: values
   syncPolicy:
     preserveResourcesOnDeletion: true
