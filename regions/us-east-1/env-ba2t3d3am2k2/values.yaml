@@ -1,3 +1,0 @@
-namespace: env-pa2c323am2k2
-server: https://kubernetes.default.svc
-version: 4.3.11
