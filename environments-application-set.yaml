@@ -31,4 +31,3 @@ spec:
           - values.yaml
           values: |
             indexer: {{ .indexer }}
-    preserveResourcesOnDeletion: true
