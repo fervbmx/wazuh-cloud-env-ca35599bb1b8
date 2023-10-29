@@ -1,3 +1,0 @@
-namespace: env-ba2t3d3am2k2
-server: https://kubernetes.default.svc
-version: 4.3.11
