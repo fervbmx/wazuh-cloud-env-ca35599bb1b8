@@ -1,6 +1,7 @@
 namespace: env-ca35599bb1b8
 server: https://kubernetes.default.svc
-version: 4.5.0
+version: 4.3.11
+rollback: true
 indexer:
   environments:
     cluster_name: 'wazuh-indexer-env-ca35599bb1b8'

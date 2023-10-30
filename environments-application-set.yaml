@@ -31,6 +31,7 @@ spec:
           valueFiles:
           - values.yaml
           values: |
+            rollback: {{ .rollback }}
             indexer: 
               environments:
                 cluster_name: {{ .indexer.environments.cluster_name }}
