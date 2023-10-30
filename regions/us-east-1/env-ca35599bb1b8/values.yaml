@@ -1,6 +1,6 @@
 namespace: env-ca35599bb1b8
 server: https://kubernetes.default.svc
-version: 4.3.11
+version: 4.5.0
 rollback: false
 indexer:
   environments:
