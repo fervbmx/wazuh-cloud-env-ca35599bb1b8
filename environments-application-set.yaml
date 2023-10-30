@@ -8,7 +8,7 @@ spec:
   generators:
   - git:
       repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
-      revision: rollback-application-set-with-multiple-sources
+      revision: git-generator
       files:
       - path: regions/eu-central-1/**/*.yaml
       - path: regions/us-east-1/**/*.yaml
