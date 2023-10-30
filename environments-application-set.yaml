@@ -7,6 +7,10 @@ spec:
   generators:
   - list:
       elements:
+      - name: 'env-ba2t3d3am2k2'
+        region: 'us-east-1'
+        server: 'https://kubernetes.default.svc'
+        version: '4.3.11'
       - name: 'env-ca35599bb1b8'
         region: 'us-east-1'
         server: 'https://kubernetes.default.svc'
