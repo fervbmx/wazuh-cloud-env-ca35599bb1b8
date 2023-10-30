@@ -23,8 +23,8 @@ spec:
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
-      sources:
-      - repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
+      source:
+        repoURL: 'git@github.com:fervbmx/wazuh-cloud-templates-environment.git'
         targetRevision: '{{ .version }}'
         path: './'
         helm:
