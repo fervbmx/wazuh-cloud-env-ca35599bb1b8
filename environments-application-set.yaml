@@ -4,6 +4,7 @@ metadata:
   name: environments
   namespace: argocd
 spec:
+  goTemplate: true
   generators:
   - git:
       repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
@@ -30,4 +31,6 @@ spec:
           valueFiles:
           - values.yaml
           values: |
-            indexer: {{ .indexer }}
+            indexer: 
+              environments:
+                cluster_name: {{ .indexer.environments.cluster_name }}
