@@ -39,7 +39,7 @@ spec:
           - values.yaml
           - $values/regions/{{ region }}/{{ name }}/values.yaml
       - repoURL: 'git@github.com:fervbmx/wazuh-cloud-environments.git'
-        targetRevision: HEAD
+        targetRevision: list-generator
         path: 'regions/{{ region }}/{{ name }}'
         ref: values
   syncPolicy:
